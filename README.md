@@ -47,7 +47,7 @@
 ### 1️⃣ Clone the Repository
 sh
 
-git clone git@github.com:hariskokane/AI-Career-Guidence.git
+git clone https://github.com/hariskokane/AI-Career-Guidence.git
 
 cd EY_Project-main
 
