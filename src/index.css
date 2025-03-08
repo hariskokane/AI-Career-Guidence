@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-blue: #00308F;
+  }
+
+  body {
+    @apply bg-white text-black;
+  }
+}
+
+@layer utilities {
+  .text-blue {
+    color: var(--color-blue);
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply px-4 py-2 text-sm font-medium text-black hover:text-[#00308F]
+           transition-all duration-200 relative after:absolute after:bottom-0 
+           after:left-0 after:h-0.5 after:w-0 after:bg-[#00308F]
+           after:transition-all after:duration-200 hover:after:w-full;
+  }
+
+  .nav-link.active {
+    @apply text-[#00308F] after:w-full;
+  }
+
+  .btn-primary {
+    @apply px-6 py-2.5 bg-[#00308F] text-white font-medium rounded-lg 
+           hover:bg-white hover:text-[#00308F] border-2 border-[#00308F]
+           transition-all duration-200 hover:scale-105 hover:shadow-lg
+           active:scale-95 disabled:opacity-50 disabled:hover:scale-100;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-2.5 bg-white text-[#00308F] font-medium rounded-lg border-2 border-[#00308F]
+           hover:bg-[#00308F] hover:text-white
+           transition-all duration-200 hover:scale-105 hover:shadow-lg
+           active:scale-95 disabled:opacity-50 disabled:hover:scale-100;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2.5 bg-white border-2 border-[#00308F] rounded-lg text-black
+           focus:ring-2 focus:ring-[#00308F]
+           transition-all duration-200 placeholder-black/40;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300
+           transform hover:-translate-y-1 border-2 border-[#00308F];
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium
+           transform transition-all duration-200 hover:scale-105;
+  }
+
+  .badge-success {
+    @apply bg-white text-[#00308F] border-2 border-[#00308F];
+  }
+
+  .badge-warning {
+    @apply bg-white text-[#00308F] border-2 border-[#00308F];
+  }
+
+  .badge-error {
+    @apply bg-white text-[#00308F] border-2 border-[#00308F];
+  }
+
+  .badge-info {
+    @apply bg-white text-[#00308F] border-2 border-[#00308F];
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .icon-spin {
+    @apply animate-spin;
+  }
+
+  .icon-pulse {
+    @apply animate-pulse;
+  }
+
+  .icon-bounce {
+    @apply animate-bounce-soft;
+  }
+
+  .slide-up {
+    @apply animate-slide-up;
+  }
+
+  .fade-in {
+    @apply animate-fade-in;
+  }
+
+  .scale-in {
+    @apply animate-scale;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-white rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-[#00308F] rounded-full hover:bg-[#00308F] transition-colors duration-200;
+}
+
+/* Smooth Transitions */
+* {
+  @apply transition-colors duration-200;
+}
+
+/* Loading Animation */
+.loading-dots:after {
+  content: '.';
+  animation: dots 1.5s steps(5, end) infinite;
+}
+
+@keyframes dots {
+  0%, 20% { content: '.'; }
+  40% { content: '..'; }
+  60% { content: '...'; }
+  80%, 100% { content: ''; }
+}
